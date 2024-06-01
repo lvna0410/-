@@ -1,0 +1,15 @@
+def plusOne(digits):
+    carry = 1  
+    for i in range(len(digits) - 1, -1, -1):
+        sum_digit = digits[i] + carry
+        digits[i] = sum_digit % 10
+        carry = sum_digit // 10
+    if carry:
+        digits.insert(0, carry)
+    return digits
+digits = [1, 2, 3]
+print(plusOne(digits)) 
+digits = [9, 9, 9]
+print(plusOne(digits))  
+digits = [0]
+print(plusOne(digits))
